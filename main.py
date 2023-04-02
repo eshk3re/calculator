@@ -1,18 +1,25 @@
-a = float(input("Введите a: "))
-b = float(input("Введите b: "))
-c = input("Введите операцию: ")
+from flask import Flask, request, jsonify
 
-if c == "+":
-    print(a+b)
-elif c == "-":
-    print(a-b)
-elif c == "*":
-    print(a*b)
-elif c == "/":
-    if b != 0:
-        print(a/b)
+app = Flask(__name__)
+
+@app.route('/calculate', methods=['POST'])
+def calculate():
+    a = request.json['a']
+    b = request.json['b']
+    operator = request.json['operator']
+
+    if operator == '+':
+        result = a + b
+    elif operator == '-':
+        result = a - b
+    elif operator == '*':
+        result = a * b
+    elif operator == '/':
+        result = a / b
     else:
-        print("Деление на 0!")
-else:
-    print("Неверная операция!")
+        return jsonify({'error': 'Invalid operator'})
 
+    return jsonify({'result': result})
+
+if __name__ == '__main__':
+    app.run(debug=True)
