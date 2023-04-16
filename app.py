@@ -6,18 +6,18 @@ app = Flask(__name__)
 def calculate():
     a = request.form['a']
     b = request.form['b']
-    #operator = request.json['operator']
+    operator = request.form['operator']
 
-    #if operator == '+':
-    result = int(a) + int(b)
-    #elif operator == '-':
-        #result = a - b
-    #elif operator == '*':
-        #result = a * b
-    #elif operator == '/':
-        #result = a / b
-    #else:
-        #return jsonify({'error': 'Invalid operator'})
+    if operator == '+':
+        result = int(a) + int(b)
+    elif operator == '-':
+        result = a - b
+    elif operator == '*':
+        result = a * b
+    elif operator == '/':
+        result = a / b
+    else:
+        return jsonify({'error': 'Invalid operator'})
 
     return jsonify({'result': result})
 
