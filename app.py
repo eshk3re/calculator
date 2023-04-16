@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
-    a = request.json['a']
-    b = request.json['b']
+    a = request.form['a']
+    b = request.form['b']
     #operator = request.json['operator']
 
     #if operator == '+':
