@@ -9,7 +9,7 @@ def calculate():
     #operator = request.json['operator']
 
     #if operator == '+':
-    result = a + b
+    result = int(a) + int(b)
     #elif operator == '-':
         #result = a - b
     #elif operator == '*':
