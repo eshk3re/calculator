@@ -41,5 +41,7 @@ pipeline{
                     steps {
                         
                             sh 'bandit -r my_project --output bandit-report.html'
+		    	}
+		}
 	}
 }
