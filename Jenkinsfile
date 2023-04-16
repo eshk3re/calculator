@@ -22,7 +22,7 @@ pipeline{
 			steps{
 				sh 'docker run -d -p 5000:5000 calculator'
 				sh 'sleep 60'
-				sh 'curl -d "a=11&b=14&operator=%2B" -X POST http://localhost:5000/calculate'
+				sh 'curl -d "a=11&b=14" -X POST http://localhost:5000/calculate'
 				sh 'docker stop $(docker ps -q --filter ancestor=calculator)'
 			}	
 		}	
