@@ -20,7 +20,7 @@ pipeline{
 	
 		stage('test'){
 			steps{
-				sh 'docker run -d -p 5000:5000 calculator'
+				sh 'docker run -d -p 8000:8000 calculator'
 				sh 'curl -d "a=10&b=13&operator=*" -X POST http://localhost:5000/calculate'
 				sh 'docker stop $(docker ps -q --filter ancestor=calculator)'
 			}	
