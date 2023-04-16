@@ -17,7 +17,7 @@ def calculate():
     elif operator == '/':
         result = int(a) / int(b)
     else:
-        return jsonify({'error': 'Invalid operator'})
+        return jsonify({'error': 'Invali operator'})
 
     return jsonify({'result': result})
 
