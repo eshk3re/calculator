@@ -1,12 +1,7 @@
 pipeline{
 	agent any
-	
-	triggers{
-		githubPush()
-	}
-	
 	stages {
-		stage('Checkout'){
+		stage('clone'){
 			steps{
 				checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/eshk3re/calculator']]]) 
 			}
