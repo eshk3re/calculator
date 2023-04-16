@@ -14,6 +14,7 @@ pipeline{
                 		branch 'main'
                 		changeset "**"
 			}
+		}
 	
 		stage ('build'){
 			steps{
