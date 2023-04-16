@@ -11,11 +11,11 @@ def calculate():
     if operator == '+':
         result = int(a) + int(b)
     elif operator == '-':
-        result = a - b
+        result = int(a) - int(b)
     elif operator == '*':
-        result = a * b
+        result = int(a) * int(b)
     elif operator == '/':
-        result = a / b
+        result = int(a) / int(b)
     else:
         return jsonify({'error': 'Invalid operator'})
 
