@@ -17,6 +17,15 @@ pipeline{
 				sh 'docker build -t calculator:latest .'
 			}
 		}
+		
+		stage('Bandit') {
+                    steps {
+                        
+                            sh 'bandit -r my_project --output bandit-report.html'
+                        
+                    }
+                }
+		
 	
 		stage('test'){
 			steps{
