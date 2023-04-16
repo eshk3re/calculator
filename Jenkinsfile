@@ -10,7 +10,10 @@ pipeline{
 			steps{
 				checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/eshk3re/calculator']]]) 
 			}
-		}
+			when {
+                		branch 'main'
+                		changeset "**"
+			}
 	
 		stage ('build'){
 			steps{
