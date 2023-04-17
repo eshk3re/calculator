@@ -8,6 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
+ENV PATH="/root/.local/bin:${PATH}"
+
 EXPOSE 5000
 
 CMD ["python","app.py"]
