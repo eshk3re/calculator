@@ -2,11 +2,11 @@ FROM python:3.9
 
 WORKDIR /usr/src/app
 
-COPY app.py ./
-
 COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app
 
 EXPOSE 5000
 
