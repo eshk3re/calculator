@@ -23,7 +23,7 @@ pipeline{
                     	steps {
                         
 
-				sh 'bandit -r app.py'
+				sh 'bandit -r /usr/src/app/app.py'
 		
 	
 
