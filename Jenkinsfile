@@ -32,7 +32,7 @@ pipeline{
 		stage('Bandit') {
                     steps {
                         
-                            sh 'bandit -r calculator --output bandit-report.html'
+                            sh 'bandit -r app.py'
 		    	}
 		}
 	}
