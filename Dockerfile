@@ -6,8 +6,12 @@ COPY . /app
 
 COPY requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt bandit
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN pip3 install bandit
 
 EXPOSE 5000
+
+ENTRYPOINT ["bandit"]
 
 CMD ["python","app.py"]
