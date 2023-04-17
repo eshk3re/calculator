@@ -8,7 +8,7 @@ COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip3 install bandit
+RUN pip install bandit
 
 EXPOSE 5000
 
