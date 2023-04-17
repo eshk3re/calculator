@@ -22,7 +22,7 @@ pipeline{
 		stage('Bandit') {
                     	steps {
                         
-				sh 'sudo apt-get install bandit'
+				sh 'apt-get install bandit'
 				sh 'bandit -r /usr/src/app/app.py'
 		
 	
