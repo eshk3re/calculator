@@ -22,7 +22,6 @@ pipeline{
 		stage('Bandit') {
                     	steps {
                         
-                            	sh 'pip install bandit'
 				sh 'bandit -r app.py'
 		
 	
