@@ -22,7 +22,7 @@ pipeline{
 		stage('Bandit') {
                     	steps {
                         
-				sh 'bandit -r app.py'
+				sh 'bandit -lll -r app.py'
 		
 	
 
