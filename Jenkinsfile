@@ -22,7 +22,7 @@ pipeline{
 		stage('Bandit') {
                     	steps {
                         
-				sh 'docker run calculator:latest bandit -lll -r app.py'
+				sh 'bandit -lll -r app.py'
 		
 	
 
