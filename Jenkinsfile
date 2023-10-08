@@ -4,7 +4,7 @@ pipeline{
 	stages {
 		stage('clone'){
 			steps{
-				checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/eshk3re/calculator']]]) 
+				checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/eshk3re/calculator']]])  //клонируем репозиторий
 			}
 			when {
                 		branch 'main'
@@ -14,7 +14,7 @@ pipeline{
 	
 		stage ('build'){
 			steps{
-				sh 'docker build -t calculator:latest .'
+				sh 'docker build -t calculator:latest .'  //создание образа
 
                         
                     }
@@ -22,7 +22,7 @@ pipeline{
 		stage('Bandit') {
                     	steps {
                         
-				sh 'docker run calculator:latest bandit -lll -r app.py'
+				sh 'docker run calculator:latest bandit -lll -r app.py' //проверка кода бандитом внутри контейнера
 		
 	
 
@@ -30,10 +30,10 @@ pipeline{
 		}	
 		stage('test'){
 			steps{
-				sh 'docker run -d -p 5000:5000 calculator'
+				sh 'docker run -d -p 5000:5000 calculator' //запуск контейнера на 5000 порте
 				sh 'sleep 30'
-				sh 'curl -d "a=21&b=5&operator=/" -X POST http://localhost:5000/calculate'
-				sh 'docker stop $(docker ps -q --filter ancestor=calculator)'
+				sh 'curl -d "a=21&b=5&operator=/" -X POST http://localhost:5000/calculate' //отправляем пост запрос с указанными числами и оператором
+				sh 'docker stop $(docker ps -q --filter ancestor=calculator)' //остановка контейнера
 		    	}
 		}
 	}
