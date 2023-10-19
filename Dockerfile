@@ -8,7 +8,7 @@ COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt  # запуск команды с установкой зависимостей из текстовика с флагом без кэша
 
-EXPOSE 5000  # выставляем порт
+EXPOSE 5000
 
 CMD ["python","app.py"]  # запуск скрипта внутри внутри контейнера
 
