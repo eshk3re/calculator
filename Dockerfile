@@ -1,4 +1,4 @@
-FROM python:3.9  # образ питона
+FROM python:3.9  
 
 WORKDIR /app  # рабочая директория 
 
