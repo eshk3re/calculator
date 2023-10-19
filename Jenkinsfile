@@ -14,7 +14,7 @@ pipeline{
 	
 		stage ('build'){
 			steps{
-				sh 'docker build -t calculator:latest .'  //создание образа
+				sh 'sudo docker build -t calculator:latest .'  //создание образа
 
                         
                     }
