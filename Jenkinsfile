@@ -22,7 +22,7 @@ pipeline{
 		stage('Bandit') {
                     	steps {
                         
-				sh 'docker run calculator:latest bandit -lll -r app.py' //проверка кода бандитом внутри контейнера
+				sh 'sudo docker run calculator:latest bandit -lll -r app.py' //проверка кода бандитом внутри контейнера
 		
 	
 
