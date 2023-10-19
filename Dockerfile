@@ -1,15 +1,15 @@
 FROM python:3.9  
 
-WORKDIR /app  # рабочая директория 
+WORKDIR /app  
 
-COPY app.py ./  # копирует файлы
+COPY app.py ./  
 
 COPY requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt  # запуск команды с установкой зависимостей из текстовика с флагом без кэша
+RUN pip install --no-cache-dir -r requirements.txt  
 
 EXPOSE 5000
 
-CMD ["python","app.py"]  # запуск скрипта внутри внутри контейнера
+CMD ["python","app.py"]  
 
 
